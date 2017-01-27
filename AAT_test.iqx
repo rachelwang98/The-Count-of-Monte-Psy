@@ -1,0 +1,1026 @@
+﻿<include>
+/ file = "AAT_sequencegenerator.iqx"
+</include>
+
+<values>
+/Startheight_ratioA = 0.5
+/Startheight_ratioB = 0.6
+/MinHeight_ratioA = 0.05
+/MinHeight_ratioB = 0.1
+/intertrialinterval = 300
+
+/totaltrialcount = 80
+</values>
+	
+***************************************************************************************
+*********************************************
+Editable Stimuli
+*********************************************
+***************************************************************************************
+The list item.targets is organized in the following way:
+main category 1 (here: highcaloric) QUERFORMAT (1): indices 1-10; 21-30
+main category 1 (here: highcaloric) HOCHFORMAT (2): indices 11-20; 31-40
+main category 2 (here: lowcaloric) QUERFORMAT (3): indices 41-50; 51-60
+main category 2 (here: lowcaloric) HOCHFORMAT (4): indices 61-70; 71-80
+
+<item targets>
+/1 = "hcL_1.jpg"
+/2 = "hcL_2.jpg"
+/3 = "hcL_3.jpg"
+/4 = "hcL_4.jpg"
+/5 = "hcL_5.jpg"
+/6 = "hcL_6.jpg"
+/7 = "hcL_7.jpg"
+/8 = "hcL_8.jpg"
+/9 = "hcL_9.jpg"
+/10 = "hcL_10.jpg"
+
+/11 = "hcP_1.jpg"
+/12 = "hcP_2.jpg"
+/13 = "hcP_3.jpg"
+/14 = "hcP_4.jpg"
+/15 = "hcP_5.jpg"
+/16 = "hcP_6.jpg"
+/17 = "hcP_7.jpg"
+/18 = "hcP_8.jpg"
+/19 = "hcP_9.jpg"
+/20 = "hcP_10.jpg"
+
+/21 = "hcL_11.jpg"
+/22 = "hcL_12.jpg"
+/23 = "hcL_13.jpg"
+/24 = "hcL_14.jpg"
+/25 = "hcL_15.jpg"
+/26 = "hcL_16.jpg"
+/27 = "hcL_17.jpg"
+/28 = "hcL_18.jpg"
+/29 = "hcL_19.jpg"
+/30 = "hcL_20.jpg"
+
+/31 = "hcP_11.jpg"
+/32 = "hcP_12.jpg"
+/33 = "hcP_13.jpg"
+/34 = "hcP_14.jpg"
+/35 = "hcP_15.jpg"
+/36 = "hcP_16.jpg"
+/37 = "hcP_17.jpg"
+/38 = "hcP_18.jpg"
+/39 = "hcP_19.jpg"
+/40 = "hcP_20.jpg"
+
+/41 = "lcL_1.jpg"
+/42 = "lcL_2.jpg"
+/43 = "lcL_3.jpg"
+/44 = "lcL_4.jpg"
+/45 = "lcL_5.jpg"
+/46 = "lcL_6.jpg"
+/47 = "lcL_7.jpg"
+/48 = "lcL_8.jpg"
+/49 = "lcL_9.jpg"
+/50 = "lcL_10.jpg"
+
+/51 = "lcP_1.jpg"
+/52 = "lcP_2.jpg"
+/53 = "lcP_3.jpg"
+/54 = "lcP_4.jpg"
+/55 = "lcP_5.jpg"
+/56 = "lcP_6.jpg"
+/57 = "lcP_7.jpg"
+/58 = "lcP_8.jpg"
+/59 = "lcP_9.jpg"
+/60 = "lcP_10.jpg"
+
+/61 = "lcL_11.jpg"
+/62 = "lcL_12.jpg"
+/63 = "lcL_13.jpg"
+/64 = "lcL_14.jpg"
+/65 = "lcL_15.jpg"
+/66 = "lcL_16.jpg"
+/67 = "lcL_17.jpg"
+/68 = "lcL_18.jpg"
+/69 = "lcL_19.jpg"
+/70 = "lcL_20.jpg"
+
+/71 = "lcP_11.jpg"
+/72 = "lcP_12.jpg"
+/73 = "lcP_13.jpg"
+/74 = "lcP_14.jpg"
+/75 = "lcP_15.jpg"
+/76 = "lcP_16.jpg"
+/77 = "lcP_17.jpg"
+/78 = "lcP_18.jpg"
+/79 = "lcP_19.jpg"
+/80 = "lcP_20.jpg"
+</item>
+
+
+NOTE: 
+organization of practice stimuli
+1: stimulus of format A (here: QUERFORMAT)
+2: stimulus of format B (here: QUERFORMAT)
+
+<item practicestimuli>
+/1 = "grayrectangle_L.jpg"
+/2 = "grayrectangle_P.jpg"
+</item>
+***************************************************************************************
+*********************************************
+Editable Instructions
+*********************************************
+***************************************************************************************
+
+<instruct >
+/ windowsize = (80%, 60%)
+/ fontstyle = ("Arial", 2.50%, false, false, false, false, 5, 0)
+</instruct>
+
+<item instructions>
+/1 ="
+
+Herzlich Willkommen zu unserem zweiten Experiment.
+
+Bei der folgenden Aufgabe werden Ihnen Bilder entweder im Quer- oder im Hochformat präsentiert. Ihre Aufgabe ist folgende:
+
+ZIEHEN Sie den Joystick zu sich heran, wenn das Bild im <%values.format1%> ist.
+DRÜCKEN Sie den Joystick von sich weg, wenn das Bild im <%values.format2%> ist.
+
+Wenn Sie den Joystick zu sich heranziehen, wird das Bild größer.
+Wenn Sie den Joystick von sich wegdrücken, wird das Bild kleiner.
+
+Sie müssen den Joystick bis zum Anschlag heranziehen bzw. wegdrücken (bis es nicht mehr weitergeht) und ihn dann wieder in die Augsgangsposition zurückbringen. Danach wird ein neues Bild präsentiert.
+
+Bewegen Sie bitte den Joystick jetzt nach links."
+/2 = "
+
+Nun folgt der Übungsdurchlauf.
+Sie werden gleich graue Rechtecke im Hoch- oder im Querformat sehen.
+
+ZIEHEN Sie den Joystick zu sich heran, wenn das Rechteck im <%values.format1%> ist.
+DRÜCKEN Sie den Joystick von sich weg, wenn das Rechteck im <%values.format2%> ist.
+
+Denken Sie daran, den Joystick bis zum Anschlag heranzuziehen bzw. wegzudrücken und ihn dann wieder in die Augsgangsposition zurückbringen. Danach wird ein neues Bild präsentiert.
+
+Bitte reagieren Sie so schnell und fehlerlos wie möglich. 
+
+Die Aufgabe dauert ca. 5 Minuten.
+
+Bewegen Sie den Joystick jetzt nach links, um mit der Übung zu beginnen."
+/3= "
+
+Nun beginnt die richtige Aufgabe. Sie werden gleich verschiedene Essensbilder im Hoch- oder im Querformat sehen. Gehen Sie wie in der Übung vor:
+
+ZIEHEN Sie den Joystick zu sich heran, wenn das Bild im <%values.format1%> ist.
+DRÜCKEN Sie den Joystick von sich weg, wenn das Bild im <%values.format2%> ist.
+
+Bitte reagieren Sie so schnell und fehlerlos wie möglich. Die Aufgabe dauert ca. 5 Minuten
+
+Bewegen Sie den Joystick jetzt nach links, um mit der Übung zu beginnen. "
+</item>
+
+<page End>
+^^Sie haben es geschafft! 
+Vielen Dank für Ihre Unterstützung!
+</page>
+***************************************************************************************
+*********************************************
+Editable Lists
+*********************************************
+***************************************************************************************
+AAT lists contain the indices of the target stimuli for each category
+
+NOTE: if the number of stimuli per category changes, change the appropriate
+list accordingly
+
+<list category1>
+/ items = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30)
+/ replace = false
+</list>
+
+<list category2>
+/ items = (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+/ replace = false
+</list>
+
+<list category3>
+/ items = (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70)
+/ replace = false
+</list>
+
+<list category4>
+/ items = (51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80)
+/ replace = false
+</list>
+
+
+*******************************************************************************************************************
+*******************************************************************************************************************
+	DATA: this section contains data file information
+*******************************************************************************************************************
+*******************************************************************************************************************
+
+*****************
+raw data
+*****************
+date, time, subject:			date and time script was run with the current subjectnumber 
+/expcondition:					used for counterbalancing experimental conditions
+									1: push for QUERFORMAT, pull for HOCHFORMAT
+									2: pull for QUERFORMAT, push for HOCHFORMAT
+
+blockcode, blocknum:			the name and number of the current block
+trialcode, trialnum: 			the name and number of the currently recorded trial
+									(Note: not all trials that are run might record data) 
+/stimulus:						the presented stimulus
+/targetcategory:				the targetcategory of the targetstimulus, 1 - 4
+/targetformat :					the targetformat of the targetstimulus (l = QUERFORMAT; p = HOCHFORMAT)
+/initialresponse:				stores the original response to the stimulus
+/correct:						stores the correctness of the initial response
+/finalresponse:					stores the final response (at time joystick is fully extended)
+/changedirection:				stores whether and how often participant changed direction during zooming (0 = no change)
+/RT:							stores the latency of the initial response (in ms)
+/completeRT:					stores how long it takes until the joystick is fully extended in whatever direction (in ms)
+
+<data >
+/file = "AAT_raw.iqdat"
+/ separatefiles = true
+/ columns = [date, time, subject, values.expcondition, blockcode, blocknum, values.trialcode, trialnum, values.stimulus,
+			values.targetcategory,values.targetformat,
+			values.initialresponse, values.correct, values.finalresponse, values.changedirection,
+			values.RT, values.completeRT]
+</data>
+
+
+*****************
+summary data
+*****************
+script.elapsedtime:							time it took to run script (in ms)
+completed:									0 = script was not completed; 1 = script was completed (all conditions run)
+
+uncorrecte AAT Difference Scores for each of the 4 main categories, 
+Diff Scores = median latency for Push trials - median latency for Pull trials
+!!! NOTE: NOT corrected for accuracy, latency only for original response (not until joystick is fully extended)
+
+/sequence:	  the experimental sequence generated for the participant
+
+
+<summarydata>
+/file = "ATT_summary.iqdat"
+/columns = [script.startdate, script.starttime, script.subjectid, script.elapsedtime, values.completed, values.expcondition, 
+expressions.aat_diffscore_cat1, expressions.aat_diffscore_cat2, values.sequence]
+</summarydata>
+
+*******************************************************************************************************************
+*******************************************************************************************************************
+							REMAINING CODE: Customize after careful consideration only
+*******************************************************************************************************************
+*******************************************************************************************************************
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+DEFAULT SCREEN SETTING
+**************************************************************************************************************
+**************************************************************************************************************
+requires Inquisit 4.0.4.0
+
+<defaults >
+/canvasaspectratio = (4,3)
+/minimumversion = "4.0.4.0"
+/ inputdevice = joystick
+/joystickthreshold = 30
+/screencolor = black
+</defaults>
+
+**************************************************************************************************************
+**************************************************************************************************************
+VALUES: automatically updated
+**************************************************************************************************************
+**************************************************************************************************************
+
+
+                                     AAT code:
+/nextstimulus :								the number of the next targetstimulus to be presented
+/selectstimulus:							the index of targetstimulus (in item )
+/targetcategory:							the targetcategory of the targetstimulus, 1 - 4
+/targetformat :								the targetformat of the targetstimulus (l = QUERFORMAT; p = HOCHFORMAT)
+/sumRTcorrect_1- sumRTcorrect_8 :			the sum of latencies for stimuli of (e.g.) category 1 - only for correct responses					
+/sumRT_1 - sumRT_8:							the sum of latencies for stimuli of (e.g.) category 1 - regardless of accuracy
+/repeat:									helper variable: counts how often a change trial has run itself
+/selectpracticepicture:						helper variable: dictates which rectangle (QUERFORMAT/HOCHFORMAT) to select for practice
+/starttime:									determines the starttime of a trial (measured at beginning of a picture trial)
+/endtime:									determines the endtime of a zooming (measured at end of zoom trials)
+/expcondition:								used for counterbalancing experimental conditions
+/format1/forma2:							helper variables for instruction purposes; set in expt
+/startheight_A/startheight_B:				sets the default height of the A(QUERFORMAT)/B (HOCHFORMAT) picture
+/Maxheight_px:								maximum height for pictures (display.canvasheight) in pixels
+/joystick_y:								helper variable to track the y-position of the joystick							
+/completeRT:								stores how long it takes until the joystick is fully extended
+/changedirection:							stores whether and how often participant changed direction during zooming
+											(0 = no change)
+/joystickchange:							stores the absolute change in joystick y-positions from one zoom trial to the next
+/trialcode:									stores the trialcode of the trial
+/RT:										stores the latency of the initial response
+/correct:									stores the correctness of the initial response
+/stimulus:									stores the stimulus 
+/initialresponse:							stores the initial response 
+/finalresponse:								stores the final response (at time joystick is fully extended)
+completed:									0 = script was not completed; 1 = script was completed (all conditions run)
+
+
+<values >
+/nextstimulus = 0
+/selectstimulus = 0
+/targetcategory = 0
+/targetformat = ""
+/sumRTcorrect_1 = 0
+/sumRT_1 = 0
+/sumRTcorrect_2 = 0
+/sumRT_2 = 0
+/sumRTcorrect_3 = 0
+/sumRT_3 = 0
+/sumRTcorrect_4 = 0
+/sumRT_4 = 0
+/sumRTcorrect_5 = 0
+/sumRT_5 = 0
+/sumRTcorrect_6 = 0
+/sumRT_6 = 0
+/sumRTcorrect_7 = 0
+/sumRT_7 = 0
+/sumRTcorrect_8 = 0
+/sumRT_8 = 0
+/repeat = 0
+/selectpracticepicture = 0
+/starttime = 0
+/endtime = 0
+/expcondition = 0
+/format1 = 0
+/format2 = 0
+/startheight_A = 0
+/startheight_B = 0
+/Maxheight_px = display.canvasheight
+/joystick_y = 0
+/completeRT = 0
+/changedirection = 0
+/joystick_change = 0
+/trialcode = 0
+/RT = 0
+/correct = 0
+/stimulus = 0
+/initialresponse = ""
+/finalresponse = ""
+/completed = 0
+</values>
+**************************************************************************************************************
+**************************************************************************************************************
+EXPRESSIONS
+**************************************************************************************************************
+**************************************************************************************************************
+uncorrecte AAT Difference Scores for each of the 4 main categories, 
+Diff Scores = median latency for Push trials - median latency for Pull trials
+!!! NOTE: NOT corrected for accuracy, latency only for original response (not until joystick is fully extended)
+
+/maxheightchange_px: max pixel height change of picture
+
+<expressions>
+/ AAT_Diffscore_Cat1 = if (values.expcondition == 1) trial.AAT_1.medianlatency - trial.AAT_2.medianlatency else
+									trial.AAT_2.medianlatency - trial.AAT_1.medianlatency
+/ AAT_Diffscore_Cat2 = if (values.expcondition == 1) trial.AAT_3.medianlatency - trial.AAT_4.medianlatency else
+									trial.AAT_4.medianlatency - trial.AAT_3.medianlatency
+/maxheightchange_px = if (values.targetformat == "l") {(values.Startheight_ratioA - values.MinHeight_ratioA) * values.Maxheight_px} else
+										{(values.Startheight_ratioB - values.MinHeight_ratioB) * values.Maxheight_px}
+</expressions>
+
+**************************************************************************************************************
+**************************************************************************************************************
+INSTRUCTIONS
+**************************************************************************************************************
+**************************************************************************************************************
+<text instruction>
+/items = instructions
+/select = sequence
+/position = (50%, 50%)
+/ fontstyle = ("Arial", 3%, false, false, false, false, 5, 0)
+/txcolor = black
+/resetinterval = 3
+/size = (80%, 80%)
+</text>
+
+<trial instructions>
+/stimulusframes = [1 = instruction]
+/validresponse = ("left")
+/recorddata = false
+/branch = [trial.instruct_joystickrest]
+</trial>
+
+Note: trial.instruct_joystickrest & trial.instruct_pause make sure that Joystick is brought back into 
+rest position
+<trial instruct_joystickrest>
+/validresponse = (change)
+/branch = [if (monkey.monkeymode == 1) trial.instruct_pause]
+/branch = [if (joystick.y == 0 && joystick.x == 0) trial.Instruct_Pause else trial.instruct_joystickrest]
+/recorddata = false
+</trial>
+
+<trial Instruct_Pause>
+/ stimulusframes = [1 = eraser]
+/ timeout = 0
+/ recorddata = false
+</trial>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+ AAT STIMULI
+**************************************************************************************************************
+**************************************************************************************************************
+<picture targetstimulus>
+/ items = targets
+/ select = values.selectstimulus
+/ position = (50%, 50%)
+/ size = (100%, 100%)
+/ erase = false
+</picture>
+
+***helper stimulus
+<shape eraser>
+/ shape = rectangle
+/ color = black
+/ size = (100%, 100%)
+/ erase = false
+</shape>
+
+**************************************************************************************************************
+**************************************************************************************************************
+AAT PRACTICE 
+**************************************************************************************************************
+**************************************************************************************************************
+
+*************************
+Practice Stimuli
+*************************
+<text error>
+/ items = ("FEHLER")
+/ position = (50%, 50%)
+/ fontstyle = ("Arial", 5%, true, false, false, false, 5, 0)
+/ txcolor = (white)
+/txbgcolor = (red)
+</text>
+
+
+*************************
+Practice Stimuli
+*************************
+
+
+NOTE:
+ picture.practicetarget selects the target via
+values.selectpracticepicture (this value is set in the
+practice trials, see below)
+
+<picture practicetarget>
+/ items = practicestimuli
+/ select = values.selectpracticepicture
+/ position = (50%, 50%)
+/ size = (100%, 100%)
+/ erase = false
+</picture>
+*************************
+Practice Trials
+*************************
+NOTE: practice trials report error feedback to participant.
+
+NOTE: 
+*trial.practicetrial_A displays the stimulus of format A (here: QUERFORMAT) by setting
+values.selectpracticepicture = 1
+*if a forward movement (=push) is detected -> decrease picture
+*if a back movement (=pull) is detected -> increase picture
+<trial practicetrial_A>
+/ontrialbegin = [values.targetformat = "l"]
+/ ontrialbegin = [values.selectpracticepicture = 1]
+/ ontrialbegin = [values.starttime = script.elapsedtime; values.endtime = 0]
+/ ontrialbegin = [picture.practicetarget.height = values.startheight_A]
+/ ontrialbegin = [values.completeRT = 0; values.changedirection = 0; values.finalresponse=""]
+
+/ stimulusframes = [1 = practicetarget]
+/ validresponse = (back, forward)
+/ iscorrectresponse = [(values.expcondition == 1 && trial.practicetrial_A.response == "forward") ||
+						(values.expcondition == 2 && trial.practicetrial_A.response == "back")]
+/ errormessage = true(error,0)
+
+/ ontrialend = [values.joystick_y = joystick.y]
+/ ontrialend = [values.joystick_change = abs(values.joystick_y)]
+/ontrialend = [values.trialcode = "practicetrial_A"]
+/ontrialend = [values.RT = trial.practicetrial_A.latency]
+/ontrialend = [values.correct = trial.practicetrial_A.correct]
+/ontrialend = [values.stimulus = picture.practicetarget.currentitem]
+/ontrialend = [if (trial.practicetrial_A.response == "forward") values.initialresponse = "PUSH"
+						else values.initialresponse = "PULL"]
+
+/ branch = [if (trial.practicetrial_A.response == "forward") trial.practicedecrease else trial.practiceincrease]
+/ recorddata = false
+</trial>
+
+NOTE: 
+trial.practicetrial_B displays the stimulus of format B (here: HOCHFORMAT) by setting
+values.selectpracticepicture = 2
+*if a forward movement (=push) is detected -> decrease picture
+*if a back movement (=pull) is detected -> increase picture
+<trial practicetrial_B>
+/ontrialbegin = [values.targetformat = "p"]
+/ontrialbegin = [values.starttime = script.elapsedtime; values.endtime = 0]
+/ ontrialbegin = [values.repeat = 0]
+/ ontrialbegin = [values.selectpracticepicture = 2]
+/ ontrialbegin = [picture.practicetarget.height = values.startheight_B]
+/ ontrialbegin = [values.completeRT = 0; values.changedirection = 0; values.finalresponse=""]
+
+/ stimulusframes = [1 = practicetarget]
+/ validresponse = (back, forward)
+/ iscorrectresponse = [(values.expcondition == 1 && trial.practicetrial_B.response == "back") ||
+						(values.expcondition == 2 && trial.practicetrial_B.response == "forward")]
+/ errormessage = true(error,0)
+
+/ontrialend = [values.joystick_y = joystick.y]
+/ontrialend = [values.joystick_change = abs(values.joystick_y)]
+/ontrialend = [values.trialcode = "practicetrial_B"]
+/ontrialend = [values.RT = trial.practicetrial_B.latency]
+/ontrialend = [values.correct = trial.practicetrial_B.correct]
+/ontrialend = [values.stimulus = picture.practicetarget.currentitem]
+/ontrialend = [if (trial.practicetrial_B.response == "forward") values.initialresponse = "PUSH"
+						else values.initialresponse = "PULL"]
+
+/ branch = [if (trial.practicetrial_B.response == "forward") trial.practicedecrease else trial.practiceincrease]
+/recorddata = false
+</trial>
+
+*********ZOOM FEATURE: trial  increase/decrease the size of the rectangles depending on participant's response*********
+
+/ iscorrectresponse = [(values.expcondition == 1 && trial.practicetrial_B.response == "back") ||
+						(values.expcondition == 2 && trial.practicetrial_B.response == "forward")]
+
+<trial practicedecrease>
+/ontrialbegin = [if (values.expcondition == 1 && values.targetformat == "p") trial.practicedecrease.insertstimulustime(text.error, 0)]
+/ontrialbegin = [if (values.expcondition == 2 && values.targetformat == "l") trial.practicedecrease.insertstimulustime(text.error, 0)]
+
+/ ontrialbegin = [picture.practicetarget.height = picture.practicetarget.height - values.joystick_change/1000 * expressions.maxheightchange_px]
+/ stimulusframes = [1 = eraser, practicetarget]
+/validresponse = (change)
+/ monkeyresponse = ("back", "forward")
+/ontrialend = [values.joystick_change = abs(values.joystick_y - joystick.y)]
+
+/ontrialend = [trial.practicedecrease.resetstimulusframes()]
+
+
+/branch = [if (monkey.monkeymode == 1) {values.endtime = script.elapsedtime; values.finalresponse = "PUSH"; trial.intertrialinterval}]
+
+/branch = [if (joystick.y <= -1000) 
+				{values.joystick_y = joystick.y; values.endtime = script.elapsedtime; values.finalresponse = "PUSH"; trial.enddecrease_practice}]
+/branch = [if (joystick.y <= values.joystick_y) 
+				{values.joystick_y = joystick.y; trial.practicedecrease}]
+/branch = [if (joystick.y > values.joystick_y) 
+				{values.joystick_y = joystick.y; values.changedirection += 1; trial.practiceincrease}]
+
+/ recorddata = false
+</trial>
+
+<trial practiceincrease>
+/ontrialbegin = [if (values.expcondition == 1 && values.targetformat == "l") trial.practiceincrease.insertstimulustime(text.error, 0)]
+/ontrialbegin = [if (values.expcondition == 2 && values.targetformat == "p") trial.practiceincrease.insertstimulustime(text.error, 0)]
+
+/ ontrialbegin = [picture.practicetarget.height = picture.practicetarget.height + values.joystick_change/1000 * expressions.maxheightchange_px]
+/ stimulusframes = [1 =  practicetarget]
+/validresponse = (change)
+/ monkeyresponse = ("back", "forward")
+/ontrialend = [values.joystick_change = abs(values.joystick_y - joystick.y)]
+
+/ontrialend = [trial.practiceincrease.resetstimulusframes()]
+
+/branch = [if (monkey.monkeymode == 1) {values.endtime = script.elapsedtime; values.finalresponse = "PULL"; trial.intertrialinterval}]
+
+/branch = [if (joystick.y >= 1000) 
+				{values.joystick_y = joystick.y; values.endtime = script.elapsedtime; values.finalresponse = "PULL"; trial.endincrease_practice}]
+/branch = [if (joystick.y >= values.joystick_y) 
+				{values.joystick_y = joystick.y; trial.practiceincrease}]
+/branch = [if (joystick.y < values.joystick_y) 
+				{values.joystick_y = joystick.y; values.changedirection += 1; trial.practicedecrease}]
+/recorddata = false
+</trial>
+
+
+Note: trials show the last size of the picture
+<trial endincrease_practice>
+/ ontrialbegin = [picture.practicetarget.height = picture.practicetarget.height + values.joystick_change/1000 * expressions.maxheightchange_px]
+/stimulusframes = [1 = practicetarget]
+/timeout = 0
+/branch = [trial.joystickrest]
+/recorddata = false
+</trial>
+
+<trial enddecrease_practice>
+/ontrialbegin = [picture.practicetarget.height = picture.practicetarget.height - values.joystick_change/1000 * expressions.maxheightchange_px]
+/stimulusframes = [1 = eraser, practicetarget]
+/timeout = 0
+/branch = [trial.joystickrest]
+/recorddata = false
+</trial>
+
+*************************
+Practice Block
+*************************
+NOTE:
+block.practice_AAT presents 10 practice trials randomly (without replacement) selecting
+from format A (QUERFORMAT) (N=5) and format B (HOCHFORMAT) stimuli (N=5)
+<block practice_AAT>
+/ trials = [1-2 = instructions; 3-12 = noreplace(practicetrial_A, practicetrial_B)]
+</block>
+
+**************************************************************************************************************
+**************************************************************************************************************
+AAT EXPERIMENTAL TRIALS
+**************************************************************************************************************
+**************************************************************************************************************
+Trial Sequence for each targetstimulus:
+trial.AAT_start -> (e.g.) trial.AAT_1 -> (e.g. depending on response) trial.decrease ->....-> trial.decrease (until a set amount of trial.decrease have run)
+																					
+**********************************************************************
+trial that selects the next targetstimulus category (1-8)
+**********************************************************************
+Debug:
+<text nextstimulus>
+/ items = ("<%values.nextstimulus%>")
+/ position = (50%, 60%)
+/ fontstyle = ("Arial", 2.33%, false, false, false, false, 5, 0)
+</text>
+
+
+NOTE:
+trial.AAT_start is only necessary if a preestablished sequence of target categories is used
+(either generated at the beginning of the experiment or by selecting from a 
+pool of pregenerated sequences). The trial determines the next target
+category via values.nextstimulus and calls the corresponding trial for that category (e.g. trial.AAT_1).
+
+<trial AAT_start>
+/ ontrialbegin = [values.nextstimulus = substring(values.sequence, values.index, 1); 
+						values.index += 1]
+/ ontrialbegin = [values.repeat = 0]
+/ timeout = 0
+/ branch = [if (values.nextstimulus == 1) trial.AAT_1]
+/ branch = [if (values.nextstimulus == 2) trial.AAT_2]
+/ branch = [if (values.nextstimulus == 3) trial.AAT_3]
+/ branch = [if (values.nextstimulus == 4) trial.AAT_4]
+/ recorddata = false
+</trial>
+
+**********************************************************************
+trials that select targetstimuli via list.categoryX 
+and take in initial response
+**********************************************************************
+<trial AAT_1>
+/ ontrialbegin = [values.selectstimulus = list.category1.nextvalue]
+/ ontrialbegin = [values.targetcategory = 1; values.targetformat = "l"]
+/ ontrialbegin = [picture.targetstimulus.height = values.startheight_A]
+
+/ ontrialbegin = [values.starttime = script.elapsedtime; values.endtime = 0]
+/ ontrialbegin = [values.completeRT = 0; values.changedirection = 0; values.finalresponse=""]
+
+/ stimulusframes = [1 = targetstimulus]
+/ validresponse = (back, forward)
+/ iscorrectresponse = [(values.expcondition == 1 && trial.AAT_1.response == "forward") ||
+								(values.expcondition == 2 && trial.AAT_1.response == "back")]
+
+/ ontrialend = [if (trial.AAT_1.correct) values.sumRTcorrect_1 += trial.AAT_1.latency]
+/ ontrialend = [values.sumRT_1 += trial.AAT_1.latency]
+
+/ ontrialend = [values.joystick_y = joystick.y]
+/ ontrialend = [values.joystick_change = abs(values.joystick_y)]
+/ ontrialend = [values.trialcode = "AAT_1"]
+/ ontrialend = [values.RT = trial.AAT_1.latency]
+/ ontrialend = [values.correct = trial.AAT_1.correct]
+/ ontrialend = [values.stimulus = picture.targetstimulus.currentitem]
+/ ontrialend = [if (trial.AAT_1.response == "forward") values.initialresponse = "PUSH"
+						else values.initialresponse = "PULL"]
+
+/ branch = [if (trial.AAT_1.response == "forward") trial.decrease else trial.increase]
+/recorddata = false
+</trial>
+
+
+<trial AAT_2>
+/ ontrialbegin = [values.selectstimulus = list.category2.nextvalue]
+/ ontrialbegin = [values.targetcategory = 1; values.targetformat = "p"]
+/ ontrialbegin = [picture.targetstimulus.height = values.startheight_B]
+
+/ ontrialbegin = [values.starttime = script.elapsedtime; values.endtime = 0]
+/ ontrialbegin = [values.completeRT = 0; values.changedirection = 0; values.finalresponse=""]
+
+/ stimulusframes = [1 = targetstimulus]
+/ validresponse = (back, forward)
+/ iscorrectresponse = [(values.expcondition == 1 && trial.AAT_2.response == "back") ||
+								(values.expcondition == 2 && trial.AAT_2.response == "forward")]
+
+/ ontrialend = [if (trial.AAT_2.correct) values.sumRTcorrect_2 += trial.AAT_2.latency]
+/ ontrialend = [values.sumRT_2 += trial.AAT_2.latency]
+
+/ ontrialend = [values.joystick_y = joystick.y]
+/ ontrialend = [values.joystick_change = abs(values.joystick_y)]
+/ ontrialend = [values.trialcode = "AAT_2"]
+/ ontrialend = [values.RT = trial.AAT_2.latency]
+/ ontrialend = [values.correct = trial.AAT_2.correct]
+/ ontrialend = [values.stimulus = picture.targetstimulus.currentitem]
+/ ontrialend = [if (trial.AAT_2.response == "forward") values.initialresponse = "PUSH"
+						else values.initialresponse = "PULL"]
+
+/branch = [if (trial.AAT_2.response == "forward") trial.decrease else trial.increase]
+/recorddata = false
+</trial>
+
+
+<trial AAT_3>
+/ ontrialbegin = [values.selectstimulus = list.category3.nextvalue]
+/ ontrialbegin = [values.targetcategory = 2; values.targetformat = "l"]
+/ ontrialbegin = [picture.targetstimulus.height = values.startheight_A]
+
+/ ontrialbegin = [values.starttime = script.elapsedtime; values.endtime = 0]
+/ ontrialbegin = [values.completeRT = 0; values.changedirection = 0; values.finalresponse=""]
+
+/ stimulusframes = [1 = targetstimulus]
+/ validresponse = (back, forward)
+/ iscorrectresponse = [(values.expcondition == 1 && trial.AAT_3.response == "forward") ||
+								(values.expcondition == 2 && trial.AAT_3.response == "back")]
+
+/ ontrialend = [if (trial.AAT_3.correct) values.sumRTcorrect_3 += trial.AAT_3.latency]
+/ ontrialend = [values.sumRT_3 += trial.AAT_3.latency]
+
+/ ontrialend = [values.joystick_y = joystick.y]
+/ ontrialend = [values.joystick_change = abs(values.joystick_y)]
+/ ontrialend = [values.trialcode = "AAT_3"]
+/ ontrialend = [values.RT = trial.AAT_3.latency]
+/ ontrialend = [values.correct = trial.AAT_3.correct]
+/ ontrialend = [values.stimulus = picture.targetstimulus.currentitem]
+/ ontrialend = [if (trial.AAT_3.response == "forward") values.initialresponse = "PUSH"
+						else values.initialresponse = "PULL"]
+
+/branch = [if (trial.AAT_3.response == "forward") trial.decrease else trial.increase]
+/recorddata = false
+</trial>
+
+
+<trial AAT_4>
+/ ontrialbegin = [values.selectstimulus = list.category4.nextvalue]
+/ ontrialbegin = [values.targetcategory = 2; values.targetformat = "p"]
+/ ontrialbegin = [picture.targetstimulus.height = values.startheight_B]
+
+/ ontrialbegin = [values.starttime = script.elapsedtime; values.endtime = 0]
+/ ontrialbegin = [values.completeRT = 0; values.changedirection = 0; values.finalresponse=""]
+
+/ stimulusframes = [1 = targetstimulus]
+/ validresponse = (back, forward)
+/ iscorrectresponse = [(values.expcondition == 1 && trial.AAT_4.response == "back") ||
+								(values.expcondition == 2 && trial.AAT_4.response == "forward")]
+
+/ ontrialend = [if (trial.AAT_4.correct) values.sumRTcorrect_4 += trial.AAT_4.latency]
+/ ontrialend = [values.sumRT_4 += trial.AAT_4.latency]
+
+/ ontrialend = [values.joystick_y = joystick.y]
+/ ontrialend = [values.joystick_change = abs(values.joystick_y)]
+/ ontrialend = [values.trialcode = "AAT_4"]
+/ ontrialend = [values.RT = trial.AAT_4.latency]
+/ ontrialend = [values.correct = trial.AAT_4.correct]
+/ ontrialend = [values.stimulus = picture.targetstimulus.currentitem]
+/ ontrialend = [if (trial.AAT_4.response == "forward") values.initialresponse = "PUSH"
+						else values.initialresponse = "PULL"]
+
+/branch = [if (trial.AAT_4.response == "forward") trial.decrease else trial.increase]
+/recorddata = false
+</trial>
+
+
+**********************************************************************
+ZOOM trials that control the size changes of the target stimuli 
+as dictated by response; zoom trials come to an end when the 
+joystick is fully extended
+**********************************************************************
+<trial decrease>
+/ ontrialbegin = [picture.targetstimulus.height = picture.targetstimulus.height - values.joystick_change/1000 * expressions.maxheightchange_px]
+
+/ stimulusframes = [1 = eraser, targetstimulus]
+/validresponse = (change)
+/ monkeyresponse = ("back", "forward")
+
+/ontrialend = [values.joystick_change = abs(values.joystick_y - joystick.y)]
+
+/branch = [if (monkey.monkeymode == 1) {values.endtime = script.elapsedtime; values.finalresponse = "PUSH"; trial.intertrialinterval}]
+
+/branch = [if (joystick.y <= -1000) 
+				{values.joystick_y = joystick.y; values.endtime = script.elapsedtime; values.finalresponse = "PUSH"; trial.enddecrease}]
+/branch = [if (joystick.y <= values.joystick_y) 
+				{values.joystick_y = joystick.y; trial.decrease}]
+/branch = [if (joystick.y > values.joystick_y) 
+				{values.joystick_y = joystick.y; values.changedirection += 1; trial.increase}]
+/ recorddata = false
+</trial>
+
+
+<trial increase>
+/ ontrialbegin = [picture.targetstimulus.height = picture.targetstimulus.height + values.joystick_change/1000 * expressions.maxheightchange_px]
+/ stimulusframes = [1 = targetstimulus]
+/validresponse = (change)
+/ monkeyresponse = ("back", "forward")
+/ontrialend = [values.joystick_change = abs(values.joystick_y - joystick.y)]
+
+/branch = [if (monkey.monkeymode == 1) {values.endtime = script.elapsedtime; values.finalresponse = "PULL"; trial.intertrialinterval}]
+
+/branch = [if (joystick.y >= 1000) 
+				{values.joystick_y = joystick.y; values.endtime = script.elapsedtime; values.finalresponse = "PULL"; trial.endincrease}]
+/branch = [if (joystick.y >= values.joystick_y) 
+				{values.joystick_y = joystick.y; trial.increase}]
+/branch = [if (joystick.y < values.joystick_y) 
+				{values.joystick_y = joystick.y; values.changedirection += 1; trial.decrease}]
+/recorddata = false
+</trial>
+
+
+Note: trials show the last size of the picture
+<trial endincrease>
+/ ontrialbegin = [picture.targetstimulus.height = picture.targetstimulus.height + values.joystick_change/1000 * expressions.maxheightchange_px]
+/stimulusframes = [1 = targetstimulus]
+/timeout = 0
+/branch = [trial.joystickrest]
+/recorddata = false
+</trial>
+
+<trial enddecrease>
+/ontrialbegin = [picture.targetstimulus.height = picture.targetstimulus.height - values.joystick_change/1000 * expressions.maxheightchange_px]
+/stimulusframes = [1 = eraser, targetstimulus]
+/timeout = 0
+/branch = [trial.joystickrest]
+/recorddata = false
+</trial>
+
+**********************************************************************
+Helper Trials:
+*trial.joystickrest: tracks that joystick was moved back into the rest position
+*trial. InterTrialInterval : sets a predetermined InterTrialInterval
+(and stores all relevant data in the data file to have one complete dataline for each trial)
+**********************************************************************
+<trial joystickrest>
+/isvalidresponse = [trial.joystickrest.response =="change"]
+/branch = [if (joystick.y == 0 && joystick.x == 0) trial.InterTrialInterval else trial.joystickrest]
+/recorddata = false
+/ monkeyresponse = ("change")
+</trial>
+
+<trial InterTrialInterval>
+/ontrialbegin = [values.completeRT= values.endtime - values.starttime]
+/ stimulusframes = [1 = eraser]
+/ timeout = values.intertrialinterval
+/ recorddata = true
+</trial>
+**************************************************************************************************************
+**************************************************************************************************************
+AAT EXPERIMENTAL BLOCKS
+**************************************************************************************************************
+**************************************************************************************************************
+Note: if you adjust values.totaltrialcount, you need to adjust the number of trials called by block.AAT
+
+<block AAT>
+/ onblockbegin = [values.index = 0]
+/ trials = [1 = instructions; 2-81 = AAT_start]
+</block>
+
+Note: trial.AAT_start uses a pregenerated trialsequence, if the order of the trial
+can be random use the following code:
+
+block AAT>
+/ trials = [1 = instructions; 2-81 = noreplace(AAT_1, AAT_2, AAT_3, AAT_4)]
+</block>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+EXPERIMENT 
+**************************************************************************************************************
+**************************************************************************************************************
+NOTE:
+format/direction counterbalanced by group number
+
+<expt >
+/ onexptbegin = [values.expcondition = 1]
+/ onexptbegin = [values.format1 = "HOCHFORMAT"; values.format2 = "QUERFORMAT"]
+/ subjects = (1 of 2)
+/groupassignment = groupnumber
+/ onexptbegin = [values.startheight_A = values.Startheight_ratioA*values.Maxheight_px]
+/ onexptbegin = [values.startheight_B = values.Startheight_ratioB* values.Maxheight_px]
+/ blocks = [1 = SequenceGenerator; 2 = practice_AAT; 3 = AAT]
+/ postinstructions = (End)
+/ onexptend = [values.completed = 1]
+</expt>
+
+<expt >
+/ onexptbegin = [values.expcondition = 2]
+/ onexptbegin = [values.format2 = "HOCHFORMAT"; values.format1 = "QUERFORMAT"]
+/ subjects = (2 of 2)
+/groupassignment = groupnumber
+/ onexptbegin = [values.startheight_A = values.Startheight_ratioA*values.Maxheight_px]
+/ onexptbegin = [values.startheight_B = values.Startheight_ratioB*values.Maxheight_px]
+/ blocks = [1 = SequenceGenerator; 2 = practice_AAT; 3 = AAT]
+/ postinstructions = (End)
+/ onexptend = [values.completed = 1]
+</expt>
+
+**************************************************************************************************************
+                                                          END OF FILE
+**************************************************************************************************************
+
+Changes:
+1. "item targets" changing the name of the items --> increasing the number of stimuli per categroy (20 highcaloric food stimuli (*2 (P/L) = 40 highcaloric food stimuli; 
+same for lowcaloric food stimuli) (consequence: deleting category 3 and 4)
+
+2. list category: 4 instead of 8 categories
+
+3. deleted: trial AAT_5 - trial AAT_8
+
+4. not necessary, but:
+block AAT>
+/ trials = [1 = instructions; 2-81 = noreplace(AAT_1, AAT_2, AAT_3, AAT_4, AAT_5, AAT_6, AAT_7, AAT_8)] 
+into
+block AAT>
+/ trials = [1 = instructions; 2-81 = noreplace(AAT_1, AAT_2, AAT_3, AAT_4)
+
+5.:
+trial AAT_start
+/ ontrialbegin = [values.nextstimulus = substring(values.sequence, values.index, 1); 
+						values.index += 1]
+/ ontrialbegin = [values.repeat = 0]
+/ timeout = 0
+/ branch = [if (values.nextstimulus == 1) trial.AAT_1]
+/ branch = [if (values.nextstimulus == 2) trial.AAT_2]
+/ branch = [if (values.nextstimulus == 3) trial.AAT_3]
+/ branch = [if (values.nextstimulus == 4) trial.AAT_4]
+/ branch = [if (values.nextstimulus == 5) trial.AAT_5]
+/ branch = [if (values.nextstimulus == 6) trial.AAT_6]
+/ branch = [if (values.nextstimulus == 7) trial.AAT_7]
+/ branch = [if (values.nextstimulus == 8) trial.AAT_8]
+/ recorddata = false
+</trial>
+into
+trial AAT_start
+/ ontrialbegin = [values.nextstimulus = substring(values.sequence, values.index, 1); 
+						values.index += 1]
+/ ontrialbegin = [values.repeat = 0]
+/ timeout = 0
+/ branch = [if (values.nextstimulus == 1) trial.AAT_1]
+/ branch = [if (values.nextstimulus == 2) trial.AAT_2]
+/ branch = [if (values.nextstimulus == 3) trial.AAT_3]
+/ branch = [if (values.nextstimulus == 4) trial.AAT_4]
+/ recorddata = false
+</trial>
+
+5.:
+expressions
+/ AAT_Diffscore_Cat1 = if (values.expcondition == 1) trial.AAT_1.medianlatency - trial.AAT_2.medianlatency else
+									trial.AAT_2.medianlatency - trial.AAT_1.medianlatency
+/ AAT_Diffscore_Cat2 = if (values.expcondition == 1) trial.AAT_3.medianlatency - trial.AAT_4.medianlatency else
+									trial.AAT_4.medianlatency - trial.AAT_3.medianlatency
+/ AAT_Diffscore_Cat3 = if (values.expcondition == 1) trial.AAT_5.medianlatency - trial.AAT_6.medianlatency else
+									trial.AAT_6.medianlatency - trial.AAT_5.medianlatency
+/ AAT_Diffscore_Cat4 = if (values.expcondition == 1) trial.AAT_7.medianlatency - trial.AAT_8.medianlatency else
+									trial.AAT_8.medianlatency - trial.AAT_7.medianlatency
+/maxheightchange_px = if (values.targetformat == "l") {(values.Startheight_ratioA - values.MinHeight_ratioA) * values.Maxheight_px} else
+										{(values.Startheight_ratioB - values.MinHeight_ratioB) * values.Maxheight_px}
+</expressions> 
+into
+expressions 
+/ AAT_Diffscore_Cat1 = if (values.expcondition == 1) trial.AAT_1.medianlatency - trial.AAT_2.medianlatency else
+									trial.AAT_2.medianlatency - trial.AAT_1.medianlatency
+/ AAT_Diffscore_Cat2 = if (values.expcondition == 1) trial.AAT_3.medianlatency - trial.AAT_4.medianlatency else
+									trial.AAT_4.medianlatency - trial.AAT_3.medianlatency
+/maxheightchange_px = if (values.targetformat == "l") {(values.Startheight_ratioA - values.MinHeight_ratioA) * values.Maxheight_px} else
+										{(values.Startheight_ratioB - values.MinHeight_ratioB) * values.Maxheight_px}
+</expressions>
+
+6.:
+summarydata
+/file = "ATT_summary.iqdat"
+/columns = [script.startdate, script.starttime, script.subjectid, script.elapsedtime, values.completed, values.expcondition, 
+expressions.aat_diffscore_cat1, expressions.aat_diffscore_cat2,
+expressions.aat_diffscore_cat3, expressions.aat_diffscore_cat4, values.sequence]
+</summarydata>
+into
+summarydata
+/file = "ATT_summary.iqdat"
+/columns = [script.startdate, script.starttime, script.subjectid, script.elapsedtime, values.completed, values.expcondition, 
+expressions.aat_diffscore_cat1, expressions.aat_diffscore_cat2, values.sequence]
+</summarydata>
+
+7. 
+values.format1 = "PORTRAIT"; values.format2 = "LANDSCAPE"
+into values.format1 = "HOCHFORMAT"; values.format2 = "QUERFORMAT" (German adaption)
+
+8.
+text error
+/ items = ("ERROR") into FALSCH (German adaption)
+
+9.
+/ screencolor = black
+
+10.
+instructions translated into german

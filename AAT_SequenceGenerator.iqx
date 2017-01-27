@@ -1,0 +1,471 @@
+﻿**************************************************************************************************************
+**************************************************************************************************************
+	VALUES
+**************************************************************************************************************
+**************************************************************************************************************
+
+Stimulus sequence generation
+/count1...count8:							contains the number of trials per stimuli type 
+/runcount_1 ...runcount_4:					counts how many consecutive stimuli of the same category
+/runcount_A / runcount_B = 0:				counts how many consecutive stimuli of the same format
+/newnumber :										the next potential stimulus digit (1-8) for the sequence 
+/count_comparecat:							helper variable: stores the count of the consecutive stimulus category 
+														relevant for the selected newnumber
+/count_compareformat :						helper variable: stores the count of the consecutive stimulus format
+														relevant for the selected newnumber
+/sequence:									the stimulus generation sequence
+/index:										current position in a string variable, helper variable to get individual items
+											out of a string of items
+/reset:										0 = sequence does not have to be reset; 1 = sequence has to be reset
+
+<values>
+/count1 = 10
+/count2 = 10
+/count3 = 10
+/count4 = 10
+/count5 = 10
+/count6 = 10
+/count7 = 10
+/count8 = 10
+/runcount_1 = 0
+/runcount_2 = 0
+/runcount_3 = 0
+/runcount_4  = 0
+/runcount_A = 0
+/runcount_B = 0
+/newnumber = 0
+/count_comparecat = 0
+/count_compareformat = 0
+/sequence = ""
+/index = 0
+/reset = 0
+</values>
+
+**************************************************************************************************************
+**************************************************************************************************************
+	STIMULI
+**************************************************************************************************************
+**************************************************************************************************************
+
+<text wait>
+/items = ("Please wait; we'll be ready shortly")
+/ fontstyle = ("Arial", 3.00%, false, false, false, false, 5, 0)
+</text>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+	LISTS
+**************************************************************************************************************
+**************************************************************************************************************
+
+<list stimcats>
+/ items = (
+1,1,1,1,1,1,1,1,1,1,
+2,2,2,2,2,2,2,2,2,2,
+3,3,3,3,3,3,3,3,3,3,
+4,4,4,4,4,4,4,4,4,4,
+5,5,5,5,5,5,5,5,5,5,
+6,6,6,6,6,6,6,6,6,6,
+7,7,7,7,7,7,7,7,7,7,
+8,8,8,8,8,8,8,8,8,8)
+/ replace = false
+</list>
+
+**************************************************************************************************************
+**************************************************************************************************************
+	TRIALS
+**************************************************************************************************************
+**************************************************************************************************************
+
+Trial Selectnumber: selects the newnumber and checks whether
+all constraints are met
+- if all constraints are met: adds new number to sequence
+- constraints are not met: checks whether an alternative number is available that could meet constraint
+							=> if yes: returns current number to list and tries again
+							=> if no: starts the sequence over
+
+
+<trial selectnumber>
+/ ontrialbegin = [values.newnumber = list.stimcats.nextvalue]
+/ ontrialbegin = [values.index += 1]
+/ ontrialbegin = [
+			if (values.newnumber == 1) 
+						{values.runcount_1 += 1; 
+						values.runcount_A += 1;
+						values.count_comparecat = values.runcount_1;
+						values.count_compareformat = values.runcount_A;
+						values.count1 -=1}
+			else if (values.newnumber ==2) 
+						{values.runcount_1 += 1; 
+						values.runcount_B += 1;
+						values.count_comparecat = values.runcount_1;
+						values.count_compareformat = values.runcount_B;
+						values.count2 -=1}
+			else if (values.newnumber ==3) 
+						{values.runcount_2 += 1; 
+						values.runcount_A += 1;
+						values.count_comparecat = values.runcount_2;
+						values.count_compareformat = values.runcount_A;
+						values.count3 -= 1}
+			else if (values.newnumber ==4) 
+						{values.runcount_2 += 1; 
+						values.runcount_B += 1;
+						values.count_comparecat = values.runcount_2;
+						values.count_compareformat = values.runcount_B;
+						values.count4 -=1}
+			else if (values.newnumber ==5) 
+						{values.runcount_3 += 1; 
+						values.runcount_A += 1;
+						values.count_comparecat = values.runcount_3;
+						values.count_compareformat = values.runcount_A;
+						values.count5 -= 1}
+			else if (values.newnumber ==6) 
+						{values.runcount_3 += 1; 
+						values.runcount_B += 1;
+						values.count_comparecat = values.runcount_3;
+						values.count_compareformat = values.runcount_B;
+						values.count6 -= 1}
+			else if (values.newnumber == 7) 
+						{values.runcount_4 += 1; 
+						values.runcount_A += 1;
+						values.count_comparecat = values.runcount_4;
+						values.count_compareformat = values.runcount_A;
+						values.count7 -= 1}
+			else 
+						{values.runcount_4 += 1; 
+						values.runcount_B += 1;
+						values.count_comparecat = values.runcount_4;
+						values.count_compareformat = values.runcount_B;
+						values.count8 -= 1}]
+
+/ontrialend = [
+		if (values.count_comparecat < 4 && values.count_compareformat < 4)
+				{
+					values.sequence = concat(values.sequence, values.newnumber);
+					values.reset = false;
+					if (values.newnumber == 1) 
+						{values.runcount_2 = 0; values.runcount_3 = 0; values.runcount_4 = 0; values.runcount_B = 0}
+					else if (values.newnumber == 2)
+						{values.runcount_2 = 0; values.runcount_3 = 0; values.runcount_4 = 0; values.runcount_A = 0}
+					else if (values.newnumber == 3)
+						{values.runcount_1 = 0; values.runcount_3 = 0; values.runcount_4 = 0; values.runcount_B = 0}
+					else if (values.newnumber == 4)
+						{values.runcount_1 = 0; values.runcount_3 = 0; values.runcount_4 = 0; values.runcount_A = 0}
+					else if (values.newnumber == 5)
+						{values.runcount_2 = 0; values.runcount_1 = 0; values.runcount_4 = 0; values.runcount_B = 0}
+					else if (values.newnumber == 6)
+						{values.runcount_2 = 0; values.runcount_1 = 0; values.runcount_4 = 0; values.runcount_A = 0}
+					else if (values.newnumber == 7)
+						{values.runcount_2 = 0; values.runcount_3 = 0; values.runcount_1 = 0; values.runcount_B = 0}
+					else if (values.newnumber == 8)
+						{values.runcount_2 = 0; values.runcount_3 = 0; values.runcount_1 = 0; values.runcount_A = 0};
+				};
+
+		if (values.count_comparecat > 3 && values.count_compareformat < 4)
+				{
+					if (values.newnumber == 1)
+					{
+						if (values.count3 !=0 || values.count4 != 0 || values.count5 != 0 || values.count6 !=0 || values.count7 != 0 || values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(1, 1); values.runcount_1 -= 1; values.runcount_A -= 1; values.count1 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 2)
+					{
+						if (values.count3 !=0 || values.count4 != 0 || values.count5 != 0 || values.count6 !=0 || values.count7 != 0 || values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(2, 1); values.runcount_1 -= 1; values.runcount_B -= 1; values.count2 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 3)
+					{
+						if (values.count1 !=0 || values.count2 != 0 || values.count5 != 0 || values.count6 !=0 || values.count7 != 0 || values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(3, 1); values.runcount_2 -= 1; values.runcount_A -= 1; values.count3 += 1; 
+						}
+						else 
+						{
+							values.reset = true;
+						}
+					}
+					else if (values.newnumber == 4)
+					{
+						if (values.count1 !=0 || values.count2 != 0 || values.count5 != 0 || values.count6 !=0 || values.count7 != 0 || values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(4, 1); values.runcount_2 -= 1; values.runcount_B -= 1; values.count4 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 5)
+					{
+						if (values.count1 !=0 || values.count2 != 0 || values.count3 != 0 || values.count4 !=0 || values.count7 != 0 || values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(5, 1); values.runcount_3 -= 1; values.runcount_A -= 1; values.count5 += 1; 
+						}
+						else 
+						{
+							values.reset = true;
+						}
+					}
+					else if (values.newnumber == 6)
+					{
+						if (values.count1 !=0 || values.count2 != 0 || values.count3 != 0 || values.count4 !=0 || values.count7 != 0 || values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(6, 1); values.runcount_3 -= 1; values.runcount_B -= 1; values.count6 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 7)
+					{
+						if (values.count1 !=0 || values.count2 != 0 || values.count3 != 0 || values.count4 !=0 || values.count5 != 0 || values.count6 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(7, 1); values.runcount_4 -= 1; values.runcount_A -= 1; values.count7 += 1; 
+						}
+						else 
+						{
+							values.reset = true;
+						}
+					}
+					else if (values.newnumber == 8)
+					{
+						if (values.count1 !=0 || values.count2 != 0 || values.count3 != 0 || values.count4 !=0 || values.count5 != 0 || values.count6 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(8, 1); values.runcount_4 -= 1; values.runcount_B -= 1; values.count8 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+		};
+
+		if (values.count_comparecat < 4 && values.count_compareformat > 3)
+				{
+					if (values.newnumber == 1)
+					{
+						if (values.count2 !=0 || values.count4 != 0 || values.count6 !=0 || values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(1, 1); values.runcount_1 -= 1; values.runcount_A -= 1; values.count1 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 2)
+					{
+						if (values.count1 !=0 || values.count3 != 0  || values.count5 != 0 || values.count7 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(2, 1); values.runcount_1 -= 1; values.runcount_B -= 1; values.count2 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 3)
+					{
+						if (values.count2 !=0 || values.count4 != 0 || values.count6 !=0 ||  values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(3, 1); values.runcount_2 -= 1; values.runcount_A -= 1; values.count3 += 1; 
+						}
+						else 
+						{
+							values.reset = true;
+						}
+					}
+					else if (values.newnumber == 4)
+					{
+						if (values.count1 !=0 || values.count3 != 0  || values.count5 != 0 || values.count7 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(4, 1); values.runcount_2 -= 1; values.runcount_B -= 1; values.count4 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 5)
+					{
+						if (values.count2 !=0 || values.count4 != 0 || values.count6 !=0 ||  values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(5, 1); values.runcount_3 -= 1; values.runcount_A -= 1; values.count5 += 1; 
+						}
+						else 
+						{
+							values.reset = true;
+						}
+					}
+					else if (values.newnumber == 6)
+					{
+						if (values.count1 !=0 || values.count3 != 0  || values.count5 != 0 || values.count7 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(6, 1); values.runcount_3 -= 1; values.runcount_B -= 1; values.count6 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 7)
+					{
+						if (values.count2 !=0 || values.count4 != 0 || values.count6 !=0 ||  values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(7, 1); values.runcount_4 -= 1; values.runcount_A -= 1; values.count7 += 1; 
+						}
+						else 
+						{
+							values.reset = true;
+						}
+					}
+					else if (values.newnumber == 8)
+					{
+						if (values.count1 !=0 || values.count3 != 0  || values.count5 != 0 || values.count7 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(8, 1); values.runcount_4 -= 1; values.runcount_B -= 1; values.count8 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+			};
+
+		if (values.count_comparecat > 3 && values.count_compareformat > 3)
+				{
+					if (values.newnumber == 1)
+					{
+						if (values.count4 != 0 || values.count6 !=0 || values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(1, 1); values.runcount_1 -= 1; values.runcount_A -= 1; values.count1 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 2)
+					{
+						if (values.count3 != 0  || values.count5 != 0 || values.count7 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(2, 1); values.runcount_1 -= 1; values.runcount_B -= 1; values.count2 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 3)
+					{
+						if (values.count2 !=0 || values.count6 !=0 ||  values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(3, 1); values.runcount_2 -= 1; values.runcount_A -= 1; values.count3 += 1; 
+						}
+						else 
+						{
+							values.reset = true;
+						}
+					}
+					else if (values.newnumber == 4)
+					{
+						if (values.count1 !=0  || values.count5 != 0 || values.count7 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(4, 1); values.runcount_2 -= 1; values.runcount_B -= 1; values.count4 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 5)
+					{
+						if (values.count2 !=0 || values.count4 != 0 ||  values.count8 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(5, 1); values.runcount_3 -= 1; values.runcount_A -= 1; values.count5 += 1; 
+						}
+						else 
+						{
+							values.reset = true;
+						}
+					}
+					else if (values.newnumber == 6)
+					{
+						if (values.count1 !=0 || values.count3 != 0 || values.count7 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(6, 1); values.runcount_3 -= 1; values.runcount_B -= 1; values.count6 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+					else if (values.newnumber == 7)
+					{
+						if (values.count2 !=0 || values.count4 != 0 || values.count6 !=0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(7, 1); values.runcount_4 -= 1; values.runcount_A -= 1; values.count7 += 1; 
+						}
+						else 
+						{
+							values.reset = true;
+						}
+					}
+					else if (values.newnumber == 8)
+					{
+						if (values.count1 !=0 || values.count3 != 0  || values.count5 != 0)
+						{
+							values.reset = false; values.index -= 1; list.stimcats.insertitem(8, 1); values.runcount_4 -= 1; values.runcount_B -= 1; values.count8 += 1; 
+						}
+						else 
+						{
+							values.reset = true
+						}
+					}
+			}]
+
+/ontrialend = [if (values.reset == true) 
+				{
+							values.sequence = "";
+							values.index = 0; values.count_comparecat = 0; values.count_compareformat = 0;
+							values.runcount_1 = 0; values.runcount_2 = 0; values.runcount_3 = 0; values.runcount_4 = 0;
+							values.runcount_A = 0; values.runcount_B = 0;
+							values.count1 = 10; values.count2 = 10; values.count3 = 10; values.count4 = 10; values.count5 = 10; values.count6 = 10; values.count7 = 10; values.count8 = 10;
+							list.stimcats.reset()
+				}]
+
+/branch = [if (values.index != values.totaltrialcount) trial.selectnumber]
+
+/timeout = 0
+/recorddata = false
+</trial>
+
+**************************************************************************************************************
+**************************************************************************************************************
+	BLOCK
+**************************************************************************************************************
+**************************************************************************************************************
+
+<block SequenceGenerator>
+/ bgstim = (wait)
+/ trials = [1 = selectnumber]
+/ recorddata = false
+</block>
+
+**************************************************************************************************************
+												End of File
+**************************************************************************************************************
